@@ -1,4 +1,4 @@
-# [Versão PT-BR]('[./README-PT.md](https://github.com/Sir-Aguiar/jwt-init/blob/main/README-PT.md)')
+# [Versão PT-BR](https://github.com/Sir-Aguiar/jwt-init/blob/main/README-PT.md)
 
 # JSON Web Token
 
