@@ -4,6 +4,12 @@ JWT é usado para compartilhar dados entre dois ambientes, geralmente um cliente
 
 Contém objetos JSON que têm as informações a serem compartilhadas. Cada JWT também é assinado usando criptografia para garantir que o conteúdo JSON não possa ser alterado pelo cliente ou por uma parte mal-intencionada.
 
+Em posse do token, a necessidade de ir até o banco de dados e realizar validações é sanada, pois contido no próprio token JWT já temos informações suficientes para garantir a autenticidade do nosso usuário.
+
+> **Não é recomendado armazenar dados sensíveis em seu JWT**
+
+
+
 O JWT é formado por três componentes principais:
 
 - `header`:
@@ -17,7 +23,7 @@ O JWT é formado por três componentes principais:
 ```js
 import jwt from "jsonwebtoken";
 
-const secretKey = "LITTLESECRET";
+const secretKey = "VICTORIA'S";
 
 const jwtPayload = {
   name: "Jhon Doe",
@@ -56,3 +62,14 @@ eyJuYW1lIjoiSmhvbiBEb2UiLCJwYXNzd29yZCI6IkZvb0JhciIsImFkZHJlc3MiOiJEb2UgQm91bGV2
   "exp": 1687301972
 }
 ```
+
+## Cargas reservadas
+
+Existem atributos que são recomendados (apesar de não obrigatórios) na validação do token.
+
+- `iat`: (Issued At) É o timestamp de quando o token foi emitido;
+- `exp`: (Expiration) É o timestamp de quando o token irá expirar;
+- `iss`: (Issuer) Emissor do token;
+- `aud`: (Audience) Quem receberá o token, aplicação que irá usá-lo;
+- `sub`: (Subject) Entidade que detém o token, como ID de um usuário, por exemplo.
+

@@ -17,7 +17,7 @@ Containing JSON objects that have the information to be shared. Each JWT is also
 ```js
 import jwt from "jsonwebtoken";
 
-const secretKey = "LITTLESECRET";
+const secretKey = "VICTORIA'S";
 
 const jwtPayload = {
   name: "Jhon Doe",
@@ -56,3 +56,13 @@ eyJuYW1lIjoiSmhvbiBEb2UiLCJwYXNzd29yZCI6IkZvb0JhciIsImFkZHJlc3MiOiJEb2UgQm91bGV2
   "exp": 1687301972
 }
 ```
+
+## Reserved Claims
+
+There are attributes that are recommended (although not mandatory) in token validation.
+
+- `iat`: (Issued At) It is the timestamp when the token was issued.
+- `exp`: (Expiration) It is the timestamp when the token will expire.
+- `iss`: (Issuer) The issuer of the token.
+- `aud`: (Audience) The recipient of the token, the application that will use it.
+- `sub`: (Subject) The entity that holds the token, such as the ID of a user, for example.
