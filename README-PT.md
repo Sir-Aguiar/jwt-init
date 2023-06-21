@@ -1,18 +1,18 @@
-# [Versão PT-BR]('./README-PT.md')
-
 # JSON Web Token
 
-JWT is used to share data between two sides, usually a client and a server.
+JWT é usado para compartilhar dados entre dois ambientes, geralmente um cliente e um servidor.
 
-Containing JSON objects that have the information to be shared. Each JWT is also signed using cryptography to ensure that the JSON contents cannot be altered by the client or a malicious party.
+Contém objetos JSON que têm as informações a serem compartilhadas. Cada JWT também é assinado usando criptografia para garantir que o conteúdo JSON não possa ser alterado pelo cliente ou por uma parte mal-intencionada.
 
-- `header`
-  - The signing algorithm that’s being used.
-  - The type of token, in this case is JWT.
-- `payload`: The payload contains the claims or the JSON object.
-- `signature`: A string generated via cryptographic algorithm, used to verify the integrity of the JSON payload.
+O JWT é formado por três componentes principais:
 
-## Token creation via JWT
+- `header`:
+  - O algoritmo de assinatura que está sendo usado.
+  - O tipo de token, neste caso, é "JWT".
+- `payload`: Contém o objeto JSON com os dados a serem compartilhados, é a nossa "carga".
+- `signature`: Uma string gerada por um algoritmo criptográfico, usada para verificar a integridade da nossa carga (payload).
+
+## Criação de token via JWT
 
 ```js
 import jwt from "jsonwebtoken";

@@ -1,5 +1,6 @@
 import "dotenv/config";
 import jwt from "jsonwebtoken";
+
 /** @type {import ('express').RequestHandler}  */
 export const ValidateUserToken = async (req, res, next) => {
   const authHeader = req.header("authorization");
